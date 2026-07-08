@@ -149,4 +149,8 @@ if uploaded_file is not None:
     else:
         st.error("Não foi possível ler os dados sequenciais. Verifique o texto extraído abaixo.")
         
-    with St.expander("🔍 In
+    with St.expander("🔍 Inspecionar Texto Bruto Extraído do PDF"):
+        if texto_bruto.strip() == "":
+            st.warning("⚠️ O texto veio em branco! O PDF é uma imagem (foto/escaneado). Passe ele em um leitor de OCR antes (como o ilovepdf.com/pt/ocr-pdf).")
+        else:
+            St.text(texto_bruto)
